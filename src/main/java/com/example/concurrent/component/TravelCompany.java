@@ -1,4 +1,4 @@
-package com.example.concurrent.taskexecution;
+package com.example.concurrent.component;
 
 import java.time.LocalTime;
 import java.util.concurrent.TimeUnit;
@@ -17,7 +17,10 @@ public class TravelCompany {
 
     public TravelQuote solicitQuote() throws InterruptedException {
         log("向 [" + name + "] 發送詢價請求...");
-        TimeUnit.SECONDS.sleep(responseDelaySeconds); // 模擬網路 API 呼叫耗時
+
+        // 模擬網路 API 呼叫耗時
+        TimeUnit.SECONDS.sleep(responseDelaySeconds);
+
         log("[" + name + "] 成功回傳報價！");
         return new TravelQuote(name, price);
     }

@@ -1,4 +1,4 @@
-package com.example.concurrent.taskexecution;
+package com.example.concurrent.component;
 
 import java.util.concurrent.Callable;
 
@@ -16,10 +16,10 @@ public class QuoteTask implements Callable<TravelQuote> {
     }
 
     public  TravelQuote getTimeoutQuote() {
-        return new TravelQuote(company.getName(), "響應逾時 (超過預算)");
+        return new TravelQuote(company.getName(), "響應逾時");
     }
 
     public TravelQuote getFailureQuote(Throwable cause) {
-        return new TravelQuote(company.getName(), "❌ 系統異常: " + cause.getMessage());
+        return new TravelQuote(company.getName(), "系統異常: " + cause.getMessage());
     }
 }

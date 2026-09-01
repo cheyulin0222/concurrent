@@ -1,4 +1,4 @@
-package com.example.concurrent.taskexecution;
+package com.example.concurrent.component;
 
 // 報價結果
 public class TravelQuote {

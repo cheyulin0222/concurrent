@@ -1,4 +1,4 @@
-package com.example.concurrent.taskexecution;
+package com.example.concurrent.component;
 
 public class Ad {
     private final String content;

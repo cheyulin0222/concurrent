@@ -1,4 +1,4 @@
-package com.example.concurrent.taskexecution;
+package com.example.concurrent.component;
 
 import java.time.LocalTime;
 import java.util.concurrent.Callable;
