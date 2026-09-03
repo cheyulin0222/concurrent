@@ -29,7 +29,7 @@ public class ThreadPerTaskWebServer implements Executor {
         }
     }
 
-    private static void handleRequest(Socket connection) {
+    public static void handleRequest(Socket connection) {
         System.out.println("[" + LocalTime.now() + "] 收到連線，開始處理...");
 
         try (Socket socket = connection) {
