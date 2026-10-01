@@ -7,6 +7,11 @@ public class ServerStatus {
     public final Set<String> users;
     public final Set<String> queries;
 
+    public ServerStatus(Set<String> users, Set<String> queries) {
+        this.users = users;
+        this.queries = queries;
+    }
+
     public synchronized void addUser(String u) {
         users.add(u);
     }

@@ -1,5 +1,8 @@
 package com.example.concurrent.self;
 
+// BoundedBuffer 雖然能正常運作
+// 因為它的狀態只有「滿」和「空」兩個簡單旗標
+// 當你想要把這套邏輯搬去實作一個「可以隨時開門、關門的閘門（Gate）」時，原本這套寫法會瞬間爆出嚴重 Bug！
 public class BoundedBuffer<V> extends BaseBoundedBuffer<V> {
 
     // 條件謂詞（Condition Predicate）：

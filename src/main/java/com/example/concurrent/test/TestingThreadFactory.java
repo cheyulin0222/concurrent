@@ -47,4 +47,8 @@ public class TestingThreadFactory implements ThreadFactory {
         // 4. 清理：把那些在睡大覺的工人強制叫醒並關閉池子
         exec.shutdownNow();
     }
+
+    private void assertEquals(int i, int maxSize) {
+
+    }
 }

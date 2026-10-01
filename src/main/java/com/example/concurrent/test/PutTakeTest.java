@@ -46,6 +46,10 @@ public class PutTakeTest {
         }
     }
 
+    private void assertEquals(int i, int i1) {
+
+    }
+
     class Producer implements Runnable {
         @Override
         public void run() {

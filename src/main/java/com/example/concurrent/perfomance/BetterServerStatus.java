@@ -7,6 +7,11 @@ public class BetterServerStatus {
     public final Set<String> users;
     public final Set<String> queries;
 
+    public BetterServerStatus(Set<String> users, Set<String> queries) {
+        this.users = users;
+        this.queries = queries;
+    }
+
     public void addUser(String u) {
         synchronized (users) {
             users.add(u);
