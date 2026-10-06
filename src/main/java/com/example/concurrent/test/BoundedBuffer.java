@@ -4,7 +4,11 @@ import java.util.concurrent.Semaphore;
 
 // 投幣式置物櫃系統
 // N 個 置物櫃 (capacity)
-public class BounderBuffer<E> {
+// 待辦事項
+// 1. 執行緒安全
+// 2. 自動煞車 （有界 Bounded)
+// 3. 沒事睡覺、有事叫醒 （協同機制）
+public class BoundedBuffer<E> {
     // Semaphore 通行證發放機，放者固定數量的代幣
     // acquire 索取一枚代幣，若當前沒代幣，則執行緒進入阻塞
     // release 歸還代幣，有在排隊的人就會被喚醒拿到代幣
@@ -16,7 +20,7 @@ public class BounderBuffer<E> {
     // 下一個要取出物品的位置索引
     private int putPosition = 0, takePosition = 0;
 
-    public BounderBuffer(int capacity) {
+    public BoundedBuffer(int capacity) {
         availableItems = new Semaphore(0);
         availableSpaces = new Semaphore(capacity);
         items = (E[]) new Object[capacity];

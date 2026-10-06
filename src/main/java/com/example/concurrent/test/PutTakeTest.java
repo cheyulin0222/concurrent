@@ -14,7 +14,7 @@ public class PutTakeTest {
     private final AtomicInteger takeSum = new AtomicInteger(0);
     // 為了讓執行緒同時進行
     private final CyclicBarrier barrier;
-    private final BounderBuffer<Integer> bb;
+    private final BoundedBuffer<Integer> bb;
     // nPairs 有幾對生產生與消費者
     // 生產執行緒 專門塞東西
     // 消費執行緒 專門拿東西
@@ -23,7 +23,7 @@ public class PutTakeTest {
     private final int nTrials, nPairs;
 
     PutTakeTest(int capacity, int npairs, int ntrials) {
-        this.bb = new BounderBuffer<>(capacity);
+        this.bb = new BoundedBuffer<>(capacity);
         this.nTrials = ntrials;
         this.nPairs = npairs;
         // 必須湊齊 21 個人，閘門才會打開
